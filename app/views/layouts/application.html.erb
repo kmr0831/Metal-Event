@@ -24,13 +24,19 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">サインアップ</a></li>
-              <li><a href="#">ログイン</a></li>
+            <% if user_signed_in? %>
+              <li><a href="/users/sign_out", data-method="delete">ログアウト</a></li>
+            <% else %>
+              <li><a href="/users/sign_up">サインアップ</a></li>
+              <li><a href="/users/sign_in">ログイン</a></li>
+            <% end %>
           </ul>
         </div>
        </div>
      </nav>
    </header>
+    <!--<p class="notice devise-notice"><%#= notice %></p>-->
+    <p class="alert devise-alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
