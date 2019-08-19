@@ -25,6 +25,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
+              <li><a href="/events/new">イベント作成</a></li>
               <li><a href="/users/sign_out", data-method="delete">ログアウト</a></li>
             <% else %>
               <li><a href="/users/sign_up">サインアップ</a></li>
