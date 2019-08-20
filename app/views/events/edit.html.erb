@@ -1,7 +1,6 @@
-
 <div class="container">
     <div class="page-header">
-        <h1>イベント作成</h1>
+        <h1>イベント編集</h1>
     </div>
     
     <%= form_with model: @event, scope: :event do |f| %>
@@ -44,6 +43,6 @@
           <%= f.text_area :content, class: "form-control" %>
       </div>
       
-      <%= f.submit "作成", class: "btn btn-primary", data: { disable_with: "作成中..." } %>
+      <%= f.submit "編集", class: "btn btn-primary", data: { disable_with: "編集中..." } %>
     <% end %>
 </div>

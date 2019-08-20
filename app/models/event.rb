@@ -6,4 +6,8 @@ class Event < ApplicationRecord
     validates :start_time, presence: true
     validates :end_time, presence: true
     
+    def created_by?(user)
+       return false unless user
+       owner.id == user.id
+    end
 end
