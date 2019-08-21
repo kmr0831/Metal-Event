@@ -12,4 +12,12 @@ class Event < ApplicationRecord
        return false unless user
        owner.id == user.id
     end
+    
+    def self.ransackable_attributes(auth_object = nil)
+      %w(name start_time)
+    end
+    
+    def self.ransackable_associations(auth_object = nil) 
+      []
+    end
 end
