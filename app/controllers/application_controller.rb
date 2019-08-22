@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
     # protect_from_forgery with: :exception
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :get_category
     
     rescue_from Exception, with: :error500
     rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, with: :error404
+    
+    def get_category
+      @categories = Category.all
+    end
     
     def error404(e)
       render 'error404', status: 404, formats: [:html]
