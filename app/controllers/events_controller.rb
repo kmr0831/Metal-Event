@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   def destroy
     @event = current_user.create_events.find(params[:id]) 
     @event.destroy!
-    redirect_to root_path, notice: "削除しました"
+    redirect_to root_path, notice: "削除しま���た"
   end
   
   private

@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   belongs_to :category
   belongs_to :owner, class_name: "User"
   has_many :tickets
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
   
   validates :name, length: { maximum: 50 }, presence: true
   validates :place, length: { maximum: 100 }, presence: true
@@ -14,6 +16,10 @@ class Event < ApplicationRecord
     return false unless user
     owner.id == user.id
   end
+  
+  # def like_user?(user)
+  #   user.likes.find_by(user_id: user.id)
+  # end
   
   def self.ransackable_attributes(auth_object = nil)
     %w(name start_time)

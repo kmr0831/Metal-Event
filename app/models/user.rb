@@ -6,4 +6,6 @@ class User < ApplicationRecord
          
   has_many :create_events, class_name: "Event", foreign_key: :owner_id
   has_many :tickets
+  has_many :likes, dependent: :destroy
+  has_many :like_events, through: :likes, source: :event
 end

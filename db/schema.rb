@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_012110) do
+ActiveRecord::Schema.define(version: 2019_08_22_095642) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2019_08_22_012110) do
     t.string "event_image"
     t.integer "category_id"
     t.index ["owner_id"], name: "index_events_on_owner_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_likes_on_event_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_08_22_012110) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "events"
+  add_foreign_key "likes", "users"
   add_foreign_key "tickets", "events"
   add_foreign_key "tickets", "users"
 end

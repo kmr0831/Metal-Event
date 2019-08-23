@@ -78,8 +78,17 @@
           </div>
         </div>
       <% else %>
-        <%= link_to "参加する", new_event_tickets_path(@event), class: "btn btn-primary btn-lg btn-block" %>
+        <%= link_to "参加する", new_event_ticket_path(@event), class: "btn btn-primary btn-lg btn-block" %>
       <% end %>
+      
+      <div id="like-link">
+        <% if current_user.likes.find_by(event_id: @event) %>
+          <%= render 'unlike' %>
+        <% else %>
+          <%= render 'like' %>
+        <% end %>
+      </div>
+      
       <hr>
       <div class="panel panel-default">
         <div class="panel-heading">

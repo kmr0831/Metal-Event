@@ -1,0 +1,4 @@
+<%= link_to event_like_path(@event), method: :delete, remote: true do %>
+  <%= icon('fas', 'heart', class: "heart-red") %>
+<% end %>
+<span id="liking"><%= @event.likes.count %></span>

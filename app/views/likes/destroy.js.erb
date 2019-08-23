@@ -1,0 +1,2 @@
+$("#like-link").html("<%= escape_javascript(render('event/like')) %>");
+$("#liking").html('<%= @event.likes.count %>');

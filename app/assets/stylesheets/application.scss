@@ -14,18 +14,20 @@
  *= require_self
  */
  
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
  
- body {
+body {
   background: #F2F2F2;
- }
- 
- /* header */
- 
- .navbar {
+}
+
+/* header */
+
+.navbar {
   margin-bottom: 0;
- }
+}
 
 /* staticpages/index */
 
@@ -34,33 +36,60 @@
   margin-top: -62px;
   height: 630px;
   h1 {
-   text-align: center;
-   margin: 0;
-   font-size: 100px;
-   color: white;
-   line-height: 600px;
+    text-align: center;
+    margin: 0;
+    font-size: 100px;
+    color: white;
+    line-height: 600px;
   }
 }
 
 .top-content-links {
- text-align: center;
- margin-top: -200px;
- button {
-  padding: 20px 10px;
-  font-size: 20px;
-  width: 280px;
-  border: none;
-  border-radius: 5px;
-  background: #ACFA58;
-  font-weight: bold;
+  text-align: center;
+    margin-top: -200px;
+    button {
+    padding: 20px 10px;
+    font-size: 20px;
+    width: 280px;
+    border: none;
+    border-radius: 5px;
+    background: #ACFA58;
+    font-weight: bold;
   .top-content-link1 {
-   text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
   }
- }
+  }
 }
 
 .description {
- margin: 250px;
- text-align: center;
+  margin: 250px;
+  text-align: center;
 }
+
+/* events/show.html.erb */
+
+.heart {
+  font-size: 45px;
+  margin-top: 5px;
+}
+
+.heart-red {
+  color: red;
+  font-size: 45px;
+  margin-top: 5px;
+}
+
+#liking {
+  font-size: 30px;
+  margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+

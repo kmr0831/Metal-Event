@@ -1,25 +1,25 @@
-    <div class="top-content">
-        <h1>MetalEvent</h1>
+<div class="top-content">
+    <h1>MetalEvent</h1>
+</div>
+<div class="top-content-links"><button><%= link_to "いますぐ始めてみよう！", new_user_registration_path, class: "top-content-link1" %></button></div>
+
+<div class="description">
+  <h1>ヘビメタ業界を盛り上げよう！</h1>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>イベント一覧</h1>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="list-group">
+        <% @events.each do |event| %>
+          <%= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>
+          <p class="list-group-item"><%= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>
+        <% end %>
+      </div>
     </div>
-    <div class="top-content-links"><button><%= link_to "いますぐ始めてみよう！", new_user_registration_path, class: "top-content-link1" %></button></div>
-    
-    <div class="description">
-        <h1>ヘビメタ業界を盛り上げよう！</h1>
-    </div>
-    
-    <div class="container">
-        <div class="page-header">
-            <h1>イベント一覧</h1>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-4">
-                <div class="list-group">
-                    <% @events.each do |event| %>
-                        <%= link_to event.name, event, class: "list-group-item list-group-item-warning" %>
-                        <p class="list-group-item"><%= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+</div>
