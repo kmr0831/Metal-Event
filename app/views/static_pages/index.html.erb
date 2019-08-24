@@ -1,25 +1,71 @@
+<!--クラス名の命名を何とかしたい-->
+
 <div class="top-content">
     <h1>MetalEvent</h1>
 </div>
 <div class="top-content-links"><button><%= link_to "いますぐ始めてみよう！", new_user_registration_path, class: "top-content-link1" %></button></div>
 
 <div class="description">
-  <h1>ヘビメタ業界を盛り上げよう！</h1>
-</div>
-
-<div class="container">
-  <div class="page-header">
-    <h1>イベント一覧</h1>
+  <h2>ヘビメタ業界を盛り上げよう！</h2>
+  <p>このアプリは、ヘビーメタルが好きな人たちの交流を助けるアプリです。</p>
+  
+  <div>
+    <h2>使い方</h2>
   </div>
   
-  <div class="row">
-    <div class="col-md-4">
-      <div class="list-group">
-        <% @events.each do |event| %>
-          <%= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>
-          <p class="list-group-item"><%= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>
-        <% end %>
-      </div>
-    </div>
+  <div class="description-1">
+    <h3><strong>1.</strong>イベントを探そう</h3>
+    <%= image_tag "computer_search_kensaku.png" %>
+    <p>
+      まずは、どんなイベントがあるか探してみよう。<br>
+      面白そうなイベントがあるはず！
+    </p>
+  </div>
+  
+  <div class="description-2">
+    <h3><strong>2.</strong>参加しよう</h3>
+    <%= image_tag "monogatari_inaba_shirousagi_wani.png" %>
+    <p>
+      思い切って参加しちゃおう！<br>
+      素敵な出会いがあるといいね
+    </p>
+  </div>
+  
+  <div class="description-3">
+    <h3><strong>3.</strong>楽しもう</h3>
+    <%= image_tag "nakayoshi_world_kids.png" %>
+    <p>
+      同じ趣味を持った人たちが来るから、仲良くなれるはず<br>
+      思いっきり楽しもう！
+    </p>
+  </div>
+  
+  
+  <div class="description-4">
+    <h3>自分でイベントを開催しよう</h3>
+    <%= image_tag "music_black_metal_band_corps_paint.png" %>
+    <p>
+      興味ある人はたくさんいるはず<br>
+      イベントを作ってみよう
+    </p>
   </div>
 </div>
+
+
+
+<!--<div class="container">-->
+<!--  <div class="page-header">-->
+<!--    <h1>イベント一覧</h1>-->
+<!--  </div>-->
+  
+<!--  <div class="row">-->
+<!--    <div class="col-md-4">-->
+<!--      <div class="list-group">-->
+<!--        <%# @events.each do |event| %>-->
+<!--          <%#= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>-->
+<!--          <p class="list-group-item"><%#= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%#= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>-->
+<!--        <%# end %>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
