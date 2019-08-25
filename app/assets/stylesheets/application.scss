@@ -21,7 +21,12 @@
  
 body {
   background: #F2F2F2;
+  // font-family: 'Courier', sans-serif;
+  font-family: Verdana, sans-serif;
 }
+
+
+
 
 /* header */
 
@@ -84,6 +89,32 @@ body {
   font-size: 30px;
   margin-left: 5px;
 }
+
+.description {
+  color: #555;
+  p {
+    font-size: 18px;
+  }
+}
+
+.how-to-use {
+  margin-top: 30px;
+}
+
+.laugh {
+  color: #FF773E;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
