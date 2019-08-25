@@ -1,7 +1,8 @@
 <!--クラス名の命名を何とかしたい-->
 
 <div class="top-content">
-    <h1>MetalEvent</h1>
+  <%= image_tag "lgi01a201408271700.jpg", id: "mypic" %>
+  <h1>MetalEvent</h1>
 </div>
 <div class="top-content-links"><button><%= link_to "いますぐ始めてみよう！", new_user_registration_path, class: "top-content-link1" %></button></div>
 
@@ -17,7 +18,7 @@
   
   <div class="description-1">
     <h3><strong>1.</strong>イベントを探そう</h3>
-    <%= image_tag "computer_search_kensaku.png" %>
+    <%= image_tag "computer_search_kensaku.png", class: "fadein" %>
     <p>
       まずは、どんなイベントがあるか探してみよう。<br>
       面白そうなイベントがあるはず！
@@ -28,7 +29,7 @@
   
   <div class="description-2">
     <h3><strong>2.</strong>参加しよう</h3>
-    <%= image_tag "monogatari_inaba_shirousagi_wani.png" %>
+    <%= image_tag "monogatari_inaba_shirousagi_wani.png", class: "fadein" %>
     <p>
       思い切って参加しちゃおう！<br>
       素敵な出会いがあるといいね
@@ -39,7 +40,7 @@
   
   <div class="description-3">
     <h3><strong>3.</strong>楽しもう</h3>
-    <%= image_tag "nakayoshi_world_kids.png" %>
+    <%= image_tag "nakayoshi_world_kids.png", class: "fadein" %>
     <p>
       同じ趣味を持った人たちが来るから、仲良くなれるはず<br>
       思いっきり楽しもう！
@@ -50,7 +51,7 @@
   
   <div class="description-4">
     <h3>自分でイベントを開催しよう</h3>
-    <%= image_tag "music_black_metal_band_corps_paint.png" %>
+    <%= image_tag "music_black_metal_band_corps_paint.png", class: "fadein" %>
     <p>
       興味ある人はたくさんいるはず<br>
       イベントを作ってみよう
@@ -76,3 +77,38 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
+
+<script>
+  var pics_src = new Array("/assets/lgi01a201408271700.jpg","/assets/guitar-1940733__340.jpg","/assets/people-festival-party-dancing.jpg");
+  var num = -1;
+
+  slideshow_timer();
+
+  function slideshow_timer(){
+    if (num == 2){
+      num = 0;
+    }
+    else {
+      num ++;
+    }
+    document.getElementById("mypic").src=pics_src[num];
+    setTimeout("slideshow_timer()",4000);
+  }
+</script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.onscroll = function (){
+      var myFade = document.getElementsByClassName("fadein");
+      for(var i = 0; i < myFade.length; i++){
+      var targetElement = myFade[i].getBoundingClientRect(); //ターゲット要素の高さ
+      var scroll = document.documentElement.scrollTop || document.body.scrollTop;  //スクロール
+      var windowHeight = window.innerHeight;  //ウィンドウの高さ
+      if (scroll > scroll + targetElement.top - windowHeight + 300){
+         myFade[i].style.opacity = "1";
+         myFade[i].style.transform = "translateY(0)";
+        }
+      }
+    }
+  }, false);
+</script>

@@ -25,9 +25,6 @@ body {
   font-family: Verdana, sans-serif;
 }
 
-
-
-
 /* header */
 
 .navbar {
@@ -36,30 +33,52 @@ body {
 
 /* staticpages/index */
 
+// .effect-fade {
+// 　opacity : 0;
+// 　transform : translate(0, 45px);
+// 　transition : all 300ms;
+// }
+
+// .effect-fade.effect-scroll {
+// 　opacity : 1;
+// 　transform : translate(0, 0);
+// }
+
+.fadein {
+  opacity : 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
 .top-content {
-  background-image: image-url("lgi01a201408271700.jpg");
+  // background-image: image-url("lgi01a201408271700.jpg");
   margin-top: -62px;
-  height: 630px;
+  // height: 630px;
   h1 {
     text-align: center;
-    margin: 0;
+    margin-top: -400px; //margin: 0;
     font-size: 100px;
     color: white;
-    line-height: 600px;
+    // line-height: 600px;
   }
+}
+
+#mypic {
+  width: 100%;
+  height: 620px;
 }
 
 .top-content-links {
   text-align: center;
-    margin-top: -200px;
-    button {
-    padding: 20px 10px;
-    font-size: 20px;
-    width: 280px;
-    border: none;
-    border-radius: 5px;
-    background: #ACFA58;
-    font-weight: bold;
+  margin-top: 100px; // margin-top: -200px;
+  button {
+  padding: 20px 10px;
+  font-size: 20px;
+  width: 280px;
+  border: none;
+  border-radius: 5px;
+  background: #ACFA58;
+  font-weight: bold;
   .top-content-link1 {
     text-decoration: none;
     color: white;
