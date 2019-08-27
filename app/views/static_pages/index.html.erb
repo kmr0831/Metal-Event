@@ -61,22 +61,26 @@
 
 
 
-<!--<div class="container">-->
-<!--  <div class="page-header">-->
-<!--    <h1>イベント一覧</h1>-->
-<!--  </div>-->
-  
-<!--  <div class="row">-->
-<!--    <div class="col-md-4">-->
-<!--      <div class="list-group">-->
-<!--        <%# @events.each do |event| %>-->
-<!--          <%#= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>-->
-<!--          <p class="list-group-item"><%#= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%#= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>-->
-<!--        <%# end %>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="container">
+  <div class="event-lists">
+    <div class="page-header">
+      <h1 class="event-title">イベント一覧</h1>
+    </div>
+    
+    <div class="row">
+      <div class="list-group">
+        <% @events.each do |event| %>
+        <div class="col-md-6">
+          <div class="event-item">
+            <%= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>
+            <p class="list-group-item"><%= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   var pics_src = new Array("/assets/lgi01a201408271700.jpg","/assets/guitar-1940733__340.jpg","/assets/people-festival-party-dancing.jpg");
