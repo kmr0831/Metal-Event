@@ -6,11 +6,11 @@ class Event < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
   
-  validates :name, length: { maximum: 50 }, presence: true
-  validates :place, length: { maximum: 100 }, presence: true
-  validates :content, length: { maximum: 1000 }, presence: true
+  validates :name,       presence: true, length: { maximum: 50 }
+  validates :place,      presence: true, length: { maximum: 100 }
+  validates :content,    presence: true, length: { maximum: 1000 } 
   validates :start_time, presence: true
-  validates :end_time, presence: true
+  validates :end_time,   presence: true
   
   def created_by?(user)
     return false unless user
