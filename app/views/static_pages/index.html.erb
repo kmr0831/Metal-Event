@@ -72,7 +72,8 @@
         <% @events.each do |event| %>
         <div class="col-md-6">
           <div class="event-item">
-            <%= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>
+            <%#= link_to event.name, event_path(event), class: "list-group-item list-group-item-warning" %>
+            <p class="list-group-item list-group-item-warning"><%= event.name %></p>
             <p class="list-group-item"><%= event.start_time.strftime("%Y/%m/%d %H:%M") %> - <%= event.end_time.strftime("%Y/%m/%d %H:%M") %></p>
           </div>
         </div>
