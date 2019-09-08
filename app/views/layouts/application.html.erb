@@ -54,9 +54,9 @@
           </div>
        </nav>
     </header>
-    <!--<p class="notice devise-notice"><%#= notice %></p>-->
-    <p class="alert devise-alert"><%= alert %></p>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
-    
   </body>
 </html>
