@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   mount_uploader :event_image, EventImageUploader
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :owner, class_name: "User"
   has_many :tickets
   has_many :likes, dependent: :destroy
