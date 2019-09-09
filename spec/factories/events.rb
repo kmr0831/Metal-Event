@@ -6,5 +6,6 @@ FactoryBot.define do
     start_time { rand(1..30).days.from_now }
     end_time { start_time + rand(1..30).hours }
     association :owner
+    association :category
   end
 end
