@@ -1,24 +1,21 @@
-# README
+ヘビーメタル好きのための、イベント投稿アプリ。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+機能
 
-Things you may want to cover:
+・ユーザー登録機能
+・ログイン、ログアウト機能
+・イベント投稿、回覧、編集、削除機能
+・イベント参加機能
+・いいね機能(非同期処理)
+・カテゴリー機能
+・画像投稿機能
+・ページネーション機能
 
-* Ruby version
+データベース
+・MySQL
 
-* System dependencies
+テストフレームワーク
+・RSpec
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+本番環境
+・heroku
